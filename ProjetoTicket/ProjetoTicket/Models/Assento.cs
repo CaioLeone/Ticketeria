@@ -1,5 +1,6 @@
 ﻿using ProjetoTicket.Models.Enuns;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace ProjetoTicket.Models
 {
@@ -11,5 +12,7 @@ namespace ProjetoTicket.Models
         [StringLength(50)]
         public string? Descricao { get; set; }
         public AssentoStatus Status {get; set;}
+
+        public ICollection<Sala> Salas { get; set; } = new List<Sala>();
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
-namespace ProjetoTicket.Models.Enuns
+namespace ProjetoTicket.Models
 {
     public class Categoria
     {
@@ -9,5 +10,7 @@ namespace ProjetoTicket.Models.Enuns
         [Required]
         [StringLength(20)]
         public string? Nome { get; set; }
+
+        public ICollection<Evento> Eventos { get; set; } = new List<Evento>();
     }
 }

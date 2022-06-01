@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace ProjetoTicket.Models
 {
@@ -10,5 +11,7 @@ namespace ProjetoTicket.Models
         [StringLength(50)]
         public string? Descricao { get; set; }
         public DateTime? Datas { get; set; }
+        public ICollection<Local> Locais { get; set; } = new List<Local>();
+        public Categoria? Categorias { get; set; }
     }
 }
